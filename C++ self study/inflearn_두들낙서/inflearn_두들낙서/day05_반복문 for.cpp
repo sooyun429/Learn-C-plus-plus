@@ -26,4 +26,18 @@ int main() {
 	for (; i <= 10; i++) { // 조건 부분(두 번째 공간) 을 true로 적거나 비워두면 true로 인식하고 무한반복됨
 		printf("%d\n", i);
 	}
+
+	// 두 개 이상의 변수 선언도 가능
+	// 2^0=1 / 2^1 = 2 / 2^2 = 4 / ...
+
+	scanf("%d", &n);
+	for (int i = 0, t = 1; i <= n; i++, t *= 2) {
+		printf("2^%d = %d\n", i, t);
+	}
+
+	// sum의 경우도 아래처럼 사용 가능 (중괄호를 아예 사용 안할 수도 있다)
+	int j, sum; // for문 밖에서 sum을 printf 로 사용하므로 전역변수로 선언해줘야 쓸 수 있음
+	// sum만 선언하고 for (int j=1, sum=0.. 이런식으로 사용하면 에러가 난다.
+	for (j = 1, sum = 0; j <= n; sum += j, j++);
+	printf("%d\n", sum);
 }
