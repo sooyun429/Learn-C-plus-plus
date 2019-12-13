@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 15 for Windows Desktop
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "day01", "day01\day01.vcxproj", "{69647AC3-6D48-4625-B2B6-9A3FBF933FAE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "inflearn_두들낙서", "inflearn_두들낙서\inflearn_두들낙서.vcxproj", "{69647AC3-6D48-4625-B2B6-9A3FBF933FAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {06B6C8EC-DB68-4FF0-9229-61080BD3B980}
+		SolutionGuid = {ED48F301-2992-42B6-BEFC-F2CDD229D992}
 	EndGlobalSection
 EndGlobal
