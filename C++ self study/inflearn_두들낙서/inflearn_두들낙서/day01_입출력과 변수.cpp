@@ -1,4 +1,4 @@
-// inflearn C언어 두들낙서 강의 참고하여 공부한 내용
+// inflearn | C와 C++을 동시에 배워보자 - 두들낙서의 C/C++
 
 #include <stdio.h>
 
