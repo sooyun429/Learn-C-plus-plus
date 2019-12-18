@@ -5,6 +5,13 @@
 // 배열의 모든 원소에 순차적으로 접근하고 싶을 때
 // 특정 횟수만큼 작업을 반복하고 싶을 때
 
+// break/continue
+// 중첩for문
+
+// 연산자: + - / * % += -= ++ -- && || !
+// 제어문: if() switch()
+// 반복문: while() for()
+
 #include <stdio.h>
 
 int main() {
@@ -40,4 +47,14 @@ int main() {
 	// sum만 선언하고 for (int j=1, sum=0.. 이런식으로 사용하면 에러가 난다.
 	for (j = 1, sum = 0; j <= n; sum += j, j++);
 	printf("%d\n", sum);
+
+	// 중첩for문
+	int n;
+	scanf("%d", &n);
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j <= i; j++) {
+			printf("%d ", 2 * j + 1);
+		}
+		printf("\n");
+	}
 }
