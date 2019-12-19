@@ -17,6 +17,84 @@ SW EXPERT ACADEMY -> Learn -> Course -> Programming Professional -> n일차 -> �
 
 
 
+
+
+|  K번째 Dijkstra
+
+https://www.acmicpc.net/problem/1854
+http://boj.kr/aedc1cb66eae41e1815acc78fa5de2f8
+
+```c++
+#include <stdio.h>
+#include <algorithm>
+#include <queue>
+#include <vector>
+#define M 1009
+#define INF 1e9+9
+using namespace std;
+
+struct pp{
+	int data, pos;
+	pp(){}
+	pp(int p, int d){ pos=p; data=d; }
+	bool operator<(const pp &q)const{
+		return data > q.data;
+	}
+};
+
+vector<int> d[M];
+vector<pp> v[M];
+priority_queue<pp> q;
+int n,m,k,chk[M];
+
+bool put(int pos, int data){
+	if (!d[pos].empty() && d[pos].back() < data) return false;
+	d[pos].push_back(data);
+	for (int i=d[pos].size()-1;i>0;i--) if (d[pos][i] < d[pos][i-1]) swap(d[pos][i], d[pos][i-1]);
+	while (d[pos].size() > k) d[pos].pop_back();
+	return true;
+}
+
+void dijkstra(){
+	int i;
+	for (i=1;i<=n;i++) put(i, INF);
+	
+	q.push(pp(1, 0));
+	put(1,0);
+	while(!q.empty()){
+		pp here = q.top(); q.pop();
+		if (chk[here.pos] >= k) continue;
+		chk[here.pos]++;
+		for (int j=0;j<v[here.pos].size();j++){
+			pp there = v[here.pos][j];
+			if (put(there.pos, here.data + there.data))
+				q.push(pp(there.pos, here.data + there.data));
+		}
+	}
+	for (i=1;i<=n;i++){
+		if (d[i].size() < k || d[i][k-1] == INF) printf("-1\n");
+		else printf("%d\n",d[i][k-1]);
+	}
+}
+
+int main(){
+	int i;
+	scanf("%d %d %d",&n,&m,&k);
+	for (i=1;i<=m;i++){
+		int a,b,c;
+		scanf("%d %d %d",&a,&b,&c);
+		v[a].push_back(pp(b,c));
+	}
+	dijkstra();
+}
+```
+
+
+
+
+
+
+
 2일차 - 가장 짧은 길 전부 청소하기
 도 풀어주세요.
 우리가 배운 Dijkstra 를 활용하여 생각해보면 좋습니다.
